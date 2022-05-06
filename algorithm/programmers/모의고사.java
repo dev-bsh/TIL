@@ -7,18 +7,10 @@ public class 모의고사 {
         int[][] supoja = {{1,2,3,4,5}, {2,1,2,3,2,4,2,5}, {3,3,1,1,2,2,4,4,5,5}};
 
         int[] correct = new int[3];
-        int count = 0;
         int max = 0;
         for(int i = 0; i < supoja.length; i++) {
             for(int j = 0; j < answers.length; j++) {
-                int supojaIndex = 0;
-                if(j < supoja[i].length) {
-                    supojaIndex = j;
-                } else {
-                    supojaIndex = j % supoja[i].length;
-                }
-
-                if(supoja[i][supojaIndex] == answers[j]) {
+                if(supoja[i][j % supoja[i].length] == answers[j]) {
                     correct[i]++;
                 }
             }
