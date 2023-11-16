@@ -2,13 +2,14 @@ n = int(input())
 coins = list(map(int, input().split()))
 coins.sort()
 
-result = 1
+target = 1
 for coin in coins:
-    # 지금까지 만들었던 값에 포함되지 않은 동전
-    if result < coin:
+    # 만들수 있는 값에 포함된 동전이면 최대값을 (최대값 + 해당동전)으로 갱신
+    if target >= coin:
+        target += coin
+    else:
         break
-    result += coin
 
-print(result)
+print(target)
 
 
